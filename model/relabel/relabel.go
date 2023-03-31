@@ -82,20 +82,20 @@ func (a *Action) UnmarshalYAML(unmarshal func(interface{}) error) error {
 type Config struct {
 	// A list of labels from which values are taken and concatenated
 	// with the configured separator in order.
-	SourceLabels model.LabelNames `yaml:"source_labels,flow,omitempty"`
+	SourceLabels model.LabelNames `yaml:"source_labels,flow,omitempty" json:"source_labels,flow,omitempty"`
 	// Separator is the string between concatenated values from the source labels.
-	Separator string `yaml:"separator,omitempty"`
+	Separator string `yaml:"separator,omitempty" json:"separator,omitempty"`
 	// Regex against which the concatenation is matched.
-	Regex Regexp `yaml:"regex,omitempty"`
+	Regex Regexp `yaml:"regex,omitempty" json:"regex,omitempty"`
 	// Modulus to take of the hash of concatenated values from the source labels.
-	Modulus uint64 `yaml:"modulus,omitempty"`
+	Modulus uint64 `yaml:"modulus,omitempty" json:"modulus,omitempty"`
 	// TargetLabel is the label to which the resulting string is written in a replacement.
 	// Regexp interpolation is allowed for the replace action.
-	TargetLabel string `yaml:"target_label,omitempty"`
+	TargetLabel string `yaml:"target_label,omitempty" json:"target_label,omitempty"`
 	// Replacement is the regex replacement pattern to be used.
-	Replacement string `yaml:"replacement,omitempty"`
+	Replacement string `yaml:"replacement,omitempty" json:"replacement,omitempty"`
 	// Action is the action to be performed for the relabeling.
-	Action Action `yaml:"action,omitempty"`
+	Action Action `yaml:"action,omitempty" json:"action,omitempty"`
 }
 
 // UnmarshalYAML implements the yaml.Unmarshaler interface.
